@@ -16,7 +16,9 @@ name = st.sidebar.text_input("Child's Name")
 temp = st.sidebar.number_input("Temperature (°F)", min_value=90.0, max_value=110.0, step=0.1)
 medicine = st.sidebar.text_input("Medicine Given (optional)")
 dosage = st.sidebar.text_input("Dosage (optional)")
-timestamp = st.sidebar.datetime_input("Timestamp", datetime.now())
+date = st.sidebar.date_input("Date", datetime.now().date())
+time = st.sidebar.time_input("Time", datetime.now().time())
+timestamp = datetime.combine(date, time)
 
 if st.sidebar.button("Add Record"):
     if name and temp:
